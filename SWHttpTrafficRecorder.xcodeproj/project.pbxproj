@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		12948FBB1D9041EB0082FBC8 /* SWHttpTrafficRecorderNSURLSessionConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 12948FBA1D9041EB0082FBC8 /* SWHttpTrafficRecorderNSURLSessionConfiguration.m */; };
+		12E337ED1D74915D00F3E5DE /* SWHttpTrafficRecorderSwizzling.h in Headers */ = {isa = PBXBuildFile; fileRef = 12E337EC1D74915D00F3E5DE /* SWHttpTrafficRecorderSwizzling.h */; };
+		12E337EF1D74916F00F3E5DE /* SWHttpTrafficRecorderSwizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = 12E337EE1D74916F00F3E5DE /* SWHttpTrafficRecorderSwizzling.m */; };
 		46A8AC6A1CDC9952009AFA26 /* SWHttpTrafficRecorder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46A8AC5F1CDC9952009AFA26 /* SWHttpTrafficRecorder.framework */; };
 		46A8AC6F1CDC9952009AFA26 /* SWHttpTrafficRecorderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 46A8AC6E1CDC9952009AFA26 /* SWHttpTrafficRecorderTests.m */; };
 		46A8ACA41CDE0362009AFA26 /* SWHttpTrafficRecorder.h in Headers */ = {isa = PBXBuildFile; fileRef = 46A8ACA21CDE0362009AFA26 /* SWHttpTrafficRecorder.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -24,6 +27,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		12948FBA1D9041EB0082FBC8 /* SWHttpTrafficRecorderNSURLSessionConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWHttpTrafficRecorderNSURLSessionConfiguration.m; sourceTree = "<group>"; };
+		12E337EC1D74915D00F3E5DE /* SWHttpTrafficRecorderSwizzling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWHttpTrafficRecorderSwizzling.h; sourceTree = "<group>"; };
+		12E337EE1D74916F00F3E5DE /* SWHttpTrafficRecorderSwizzling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWHttpTrafficRecorderSwizzling.m; sourceTree = "<group>"; };
 		46A8AC5F1CDC9952009AFA26 /* SWHttpTrafficRecorder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SWHttpTrafficRecorder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		46A8AC641CDC9952009AFA26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		46A8AC691CDC9952009AFA26 /* UnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,6 +82,9 @@
 				46A8ACA21CDE0362009AFA26 /* SWHttpTrafficRecorder.h */,
 				46A8ACA31CDE0362009AFA26 /* SWHttpTrafficRecorder.m */,
 				46A8AC641CDC9952009AFA26 /* Info.plist */,
+				12E337EC1D74915D00F3E5DE /* SWHttpTrafficRecorderSwizzling.h */,
+				12E337EE1D74916F00F3E5DE /* SWHttpTrafficRecorderSwizzling.m */,
+				12948FBA1D9041EB0082FBC8 /* SWHttpTrafficRecorderNSURLSessionConfiguration.m */,
 			);
 			path = SWHttpTrafficRecorder;
 			sourceTree = "<group>";
@@ -96,6 +105,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12E337ED1D74915D00F3E5DE /* SWHttpTrafficRecorderSwizzling.h in Headers */,
 				46A8ACA41CDE0362009AFA26 /* SWHttpTrafficRecorder.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -196,7 +206,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12948FBB1D9041EB0082FBC8 /* SWHttpTrafficRecorderNSURLSessionConfiguration.m in Sources */,
 				46A8ACA61CDE0362009AFA26 /* SWHttpTrafficRecorder.m in Sources */,
+				12E337EF1D74916F00F3E5DE /* SWHttpTrafficRecorderSwizzling.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
