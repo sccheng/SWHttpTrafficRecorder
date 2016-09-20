@@ -2,7 +2,7 @@
 #import <Foundation/Foundation.h>
 
 #if defined(__IPHONE_7_0) || defined(__MAC_10_9)
-#import "SWHttpTrafficRecorder.m"
+#import "SWHttpTrafficRecorder.h"
 #import "SWHttpTrafficRecorderSwizzling.h"
 
 typedef NSURLSessionConfiguration*(*SessionConfigConstructor)(id,SEL);
@@ -13,13 +13,7 @@ static NSURLSessionConfiguration* SWHttpTrafficRecorder_defaultSessionConfigurat
 {
     NSURLSessionConfiguration* config = orig_defaultSessionConfiguration(self,_cmd); // call original method
     
-    NSMutableArray * urlProtocolClasses = [NSMutableArray arrayWithArray:config.protocolClasses];
-    Class protoCls = SWRecordingProtocol.class;
-    if (![urlProtocolClasses containsObject:protoCls])
-    {
-        [urlProtocolClasses insertObject:protoCls atIndex:0];
-    }
-    config.protocolClasses = urlProtocolClasses;
+    [SWHttpTrafficRecorder setEnabled:YES forSessionConfiguration:config];
     
     return config;
 }
@@ -28,13 +22,7 @@ static NSURLSessionConfiguration* SWHttpTrafficRecorder_ephemeralSessionConfigur
 {
     NSURLSessionConfiguration* config = orig_ephemeralSessionConfiguration(self,_cmd); // call original method
     
-    NSMutableArray * urlProtocolClasses = [NSMutableArray arrayWithArray:config.protocolClasses];
-    Class protoCls = SWRecordingProtocol.class;
-    if (![urlProtocolClasses containsObject:protoCls])
-    {
-        [urlProtocolClasses insertObject:protoCls atIndex:0];
-    }
-    config.protocolClasses = urlProtocolClasses;
+    [SWHttpTrafficRecorder setEnabled:YES forSessionConfiguration:config];
     
     return config;
 }
