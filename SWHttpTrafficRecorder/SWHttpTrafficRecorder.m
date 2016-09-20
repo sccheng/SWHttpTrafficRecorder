@@ -150,17 +150,21 @@ NSString * const SWHttpTrafficRecorderErrorDomain           = @"RECORDER_ERROR_D
     if (   [sessionConfig respondsToSelector:@selector(protocolClasses)]
         && [sessionConfig respondsToSelector:@selector(setProtocolClasses:)])
     {
-        NSMutableArray * urlProtocolClasses = [NSMutableArray arrayWithArray:sessionConfig.protocolClasses];
+//        NSMutableArray * urlProtocolClasses = [NSMutableArray arrayWithArray:sessionConfig.protocolClasses];
         Class protoCls = [SWRecordingProtocol class];
-        if (enable && ![urlProtocolClasses containsObject:protoCls])
+        NSMutableOrderedSet *mutableProtocols = [[NSMutableOrderedSet alloc] initWithArray:sessionConfig.protocolClasses];
+        if (enable && ![mutableProtocols containsObject:protoCls])
         {
-            [urlProtocolClasses insertObject:protoCls atIndex:0];
+            //            [urlProtocolClasses insertObject:protoCls atIndex:0];
+            [mutableProtocols insertObject:[SWRecordingProtocol class] atIndex:0];
         }
-        else if (!enable && [urlProtocolClasses containsObject:protoCls])
+        else if (!enable && [mutableProtocols containsObject:protoCls])
         {
-            [urlProtocolClasses removeObject:protoCls];
+            //            [urlProtocolClasses removeObject:protoCls];
+            [mutableProtocols insertObject:[SWRecordingProtocol class] atIndex:0];
         }
-        sessionConfig.protocolClasses = urlProtocolClasses;
+//        sessionConfig.protocolClasses = urlProtocolClasses;
+        sessionConfig.protocolClasses = [mutableProtocols array];
     }
     else
     {
