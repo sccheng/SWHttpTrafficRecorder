@@ -151,7 +151,7 @@ NSString * const SWHttpTrafficRecorderErrorDomain           = @"RECORDER_ERROR_D
         && [sessionConfig respondsToSelector:@selector(setProtocolClasses:)])
     {
         NSMutableArray * urlProtocolClasses = [NSMutableArray arrayWithArray:sessionConfig.protocolClasses];
-        Class protoCls = SWRecordingProtocol.class;
+        Class protoCls = [SWRecordingProtocol class];
         if (enable && ![urlProtocolClasses containsObject:protoCls])
         {
             [urlProtocolClasses insertObject:protoCls atIndex:0];
