@@ -25,7 +25,7 @@ static NSURLSessionConfiguration* SWHttpTrafficRecorder_defaultSessionConfigurat
 +(void) load {
     static dispatch_once_t SWHttpTrafficRecorderOnceToken;
     dispatch_once(&SWHttpTrafficRecorderOnceToken, ^ {
-        Class class = object_getClass((id)self);
+        Class class = [NSURLSessionConfiguration class];
         
         SEL originalSelector = @selector(defaultSessionConfiguration);
         
