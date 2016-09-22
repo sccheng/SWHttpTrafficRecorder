@@ -194,6 +194,14 @@ static NSString * const SWRecordingLProtocolHandledKey = @"SWRecordingLProtocolH
     return request;
 }
 
++ (void)initialize
+{
+    if (self == [SWRecordingProtocol class])
+    {
+        [NSURLProtocol registerClass:[SWRecordingProtocol class]];
+    }
+}
+
 - (void) startLoading {
     NSMutableURLRequest *newRequest = [self.request mutableCopy];
     [NSURLProtocol setProperty:@YES forKey:SWRecordingLProtocolHandledKey inRequest:newRequest];
