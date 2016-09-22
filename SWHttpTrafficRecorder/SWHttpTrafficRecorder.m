@@ -143,6 +143,12 @@ NSString * const SWHttpTrafficRecorderErrorDomain           = @"RECORDER_ERROR_D
     return _fileExtensionMapping;
 }
 
++ (void)setEnabled:(BOOL)enable forSessionConfiguration:(NSURLSessionConfiguration*)sessionConfig {
+    NSMutableOrderedSet *mutableProtocols = [[NSMutableOrderedSet alloc] initWithArray:sessionConfig.protocolClasses];
+    [mutableProtocols insertObject:[SWRecordingProtocol class] atIndex:0];
+    sessionConfig.protocolClasses = [mutableProtocols array];
+}
+
 @end
 
 

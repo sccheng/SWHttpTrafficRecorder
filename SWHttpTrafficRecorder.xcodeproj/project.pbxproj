@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		12E1FD5E1D9309C100731789 /* SWHttpTrafficRecorder+NSURLSessionConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 12E1FD5D1D9309C100731789 /* SWHttpTrafficRecorder+NSURLSessionConfiguration.m */; };
 		46A8AC6A1CDC9952009AFA26 /* SWHttpTrafficRecorder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46A8AC5F1CDC9952009AFA26 /* SWHttpTrafficRecorder.framework */; };
 		46A8AC6F1CDC9952009AFA26 /* SWHttpTrafficRecorderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 46A8AC6E1CDC9952009AFA26 /* SWHttpTrafficRecorderTests.m */; };
 		46A8ACA41CDE0362009AFA26 /* SWHttpTrafficRecorder.h in Headers */ = {isa = PBXBuildFile; fileRef = 46A8ACA21CDE0362009AFA26 /* SWHttpTrafficRecorder.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -24,6 +25,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		12E1FD5D1D9309C100731789 /* SWHttpTrafficRecorder+NSURLSessionConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SWHttpTrafficRecorder+NSURLSessionConfiguration.m"; sourceTree = "<group>"; };
 		46A8AC5F1CDC9952009AFA26 /* SWHttpTrafficRecorder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SWHttpTrafficRecorder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		46A8AC641CDC9952009AFA26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		46A8AC691CDC9952009AFA26 /* UnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,6 +78,7 @@
 				46A8ACA21CDE0362009AFA26 /* SWHttpTrafficRecorder.h */,
 				46A8ACA31CDE0362009AFA26 /* SWHttpTrafficRecorder.m */,
 				46A8AC641CDC9952009AFA26 /* Info.plist */,
+				12E1FD5D1D9309C100731789 /* SWHttpTrafficRecorder+NSURLSessionConfiguration.m */,
 			);
 			path = SWHttpTrafficRecorder;
 			sourceTree = "<group>";
@@ -196,6 +199,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12E1FD5E1D9309C100731789 /* SWHttpTrafficRecorder+NSURLSessionConfiguration.m in Sources */,
 				46A8ACA61CDE0362009AFA26 /* SWHttpTrafficRecorder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -150,6 +150,8 @@ FOUNDATION_EXPORT NSString * const SWHttpTrafficRecorderErrorDomain;
  */
 - (void)stopRecording;
 
++ (void)setEnabled:(BOOL)enable forSessionConfiguration:(NSURLSessionConfiguration*)sessionConfig;
+
 /**
  *  A Boolean value which indicates whether the recording is recording traffic.
  */
