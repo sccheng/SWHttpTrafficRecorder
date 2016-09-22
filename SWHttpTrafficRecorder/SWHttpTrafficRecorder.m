@@ -153,7 +153,9 @@ NSString * const SWHttpTrafficRecorderErrorDomain           = @"RECORDER_ERROR_D
 
 + (void)setEnabled:(BOOL)enable forSessionConfiguration:(NSURLSessionConfiguration*)sessionConfig {
     NSMutableOrderedSet *mutableProtocols = [[NSMutableOrderedSet alloc] initWithArray:sessionConfig.protocolClasses];
+    NSLog(@"in setEnabled before insert");
     [mutableProtocols insertObject:[SWRecordingProtocol class] atIndex:0];
+    NSLog(@"in setEnabled after insert");
     sessionConfig.protocolClasses = [mutableProtocols array];
 }
 
