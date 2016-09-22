@@ -12,6 +12,8 @@ static NSURLSessionConfiguration* SWHttpTrafficRecorder_defaultSessionConfigurat
 {
     NSURLSessionConfiguration* config = orig_defaultSessionConfiguration(self,_cmd); // call original method
     
+    NSLog(@"in new defaultsessionconfig");
+    
     // enable swhttptrafficrecorder
     [SWHttpTrafficRecorder setEnabled:YES forSessionConfiguration:config];
     
@@ -23,17 +25,13 @@ static NSURLSessionConfiguration* SWHttpTrafficRecorder_defaultSessionConfigurat
 @implementation NSURLSessionConfiguration(SWHttpTrafficRecorder)
 
 +(void) load {
-    static dispatch_once_t SWHttpTrafficRecorderOnceToken;
-    dispatch_once(&SWHttpTrafficRecorderOnceToken, ^ {
-        Class class = [NSURLSessionConfiguration class];
-        
-        SEL originalSelector = @selector(defaultSessionConfiguration);
-        
-        Method originalMethod = class_getClassMethod(class, originalSelector);
-        IMP swizzledMethod = (IMP)SWHttpTrafficRecorder_defaultSessionConfiguration;
-        
-        orig_defaultSessionConfiguration = (SessionConfigConstructor)method_setImplementation(originalMethod, swizzledMethod);
-    });
+    
+    SEL originalSelector = @selector(defaultSessionConfiguration);
+
+    Method originalMethod = class_getClassMethod([NSURLSessionConfiguration class], originalSelector);
+    IMP swizzledIMP = (IMP)SWHttpTrafficRecorder_defaultSessionConfiguration;
+
+    orig_defaultSessionConfiguration = (SessionConfigConstructor)method_setImplementation(originalMethod, swizzledIMP);
     
 //    orig_defaultSessionConfiguration = (SessionConfigConstructor)OHHTTPStubsReplaceMethod(@selector(defaultSessionConfiguration),
 //                                                                                          (IMP)OHHTTPStubs_defaultSessionConfiguration,
