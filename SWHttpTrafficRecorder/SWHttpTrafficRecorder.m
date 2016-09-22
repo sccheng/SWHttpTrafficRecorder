@@ -45,6 +45,14 @@ NSString * const SWHttpTrafficRecorderErrorDomain           = @"RECORDER_ERROR_D
 
 @implementation SWHttpTrafficRecorder
 
++ (void)initialize
+{
+    if (self == [SWHttpTrafficRecorder class])
+    {
+        [NSURLProtocol registerClass:[SWRecordingProtocol class]];
+    }
+}
+
 + (instancetype)sharedRecorder
 {
     static SWHttpTrafficRecorder *shared = nil;
@@ -192,14 +200,6 @@ static NSString * const SWRecordingLProtocolHandledKey = @"SWRecordingLProtocolH
 
 + (NSURLRequest *) canonicalRequestForRequest:(NSURLRequest *)request {
     return request;
-}
-
-+ (void)initialize
-{
-    if (self == [SWRecordingProtocol class])
-    {
-        [NSURLProtocol registerClass:[SWRecordingProtocol class]];
-    }
 }
 
 - (void) startLoading {
